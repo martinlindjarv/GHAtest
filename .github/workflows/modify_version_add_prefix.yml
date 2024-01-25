@@ -10,8 +10,8 @@ on:
 
   # Dependency to a forking workflow
   workflow_run:
-    workflows: ["1 Generate version number (trigger on push)"]
-    type:
+    workflows: ["Generate version number"]
+    types:
       - completed
 
 jobs:
