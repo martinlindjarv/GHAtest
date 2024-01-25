@@ -2,13 +2,6 @@
 name: Modify version number and add prefix
 
 on:
-  # Automatic trigger when pushing tags
-  # push:
-  #   branches:
-  #     - "!*"
-  #   tags:
-  #     - 'v*'
-
   # Manual trigger from the UI
   workflow_dispatch:
     inputs:
