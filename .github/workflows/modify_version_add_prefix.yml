@@ -1,5 +1,5 @@
 # runs when 1. is triggered
-name: Modify version number and add "dev-" prefix
+name: Modify version number and add prefix
 
 on:
   # Automatic trigger when pushing tags
