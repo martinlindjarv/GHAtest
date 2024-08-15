@@ -25,17 +25,6 @@ on:
         description: Deploy containers (only to dev)
         type: boolean
         default: false
-  workflow_call:
-     inputs:
-       environment:
-         type: string
-         default: dev
-         description: Environment to deploy to dev/tst
-         required: true
-       IS_DEVELOPMENT_RELEASE:
-         type: boolean
-         default: true
-         required: true
 
 jobs:
   debug_info:
