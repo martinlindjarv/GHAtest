@@ -25,7 +25,6 @@ on:
         description: Deploy containers (only to dev)
         type: boolean
         default: false
-        
   workflow_call:
      inputs:
        environment:
@@ -36,9 +35,7 @@ on:
        IS_DEVELOPMENT_RELEASE:
          type: boolean
          default: true
-       RUN_DEPLOY:
-         type: boolean
-         default: true
+
 
 jobs:
   debug_info:
