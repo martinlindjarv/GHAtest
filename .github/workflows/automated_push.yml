@@ -1,0 +1,6 @@
+# run when deploy
+name: Automated deploy on push
+
+on:
+  push:
+    branches: ["main"]
