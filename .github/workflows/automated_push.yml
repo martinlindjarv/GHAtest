@@ -25,7 +25,8 @@ on:
         description: Deploy containers (only to dev)
         type: boolean
         default: false
-
+env:
+  default: ${{ !(inputs.IS_DEVELOPMENT_RELEASE) }}
 jobs:
   debug_info:
     permissions:
@@ -39,7 +40,7 @@ jobs:
         run: echo "${{ format('<h1>Parameters</h1><p>{0}</p>', tojson(inputs)) }}" > "$GITHUB_STEP_SUMMARY"
       
       - name: debug
-        run: ${{ !(inputs.IS_DEVELOPMENT_RELEASE) }}
+        run: echo $defult
   
       - name: Dump GitHub context
         env:
