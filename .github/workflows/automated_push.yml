@@ -26,7 +26,7 @@ on:
         type: boolean
         default: false
 env:
-  default: ${{ !!(inputs.IS_DEVELOPMENT_RELEASE) }}
+  default: ${{ IS_DEVELOPMENT_RELEASE != true && 'false1' || 'true1' }}
 jobs:
   debug_info:
     permissions:
