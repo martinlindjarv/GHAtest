@@ -5,6 +5,41 @@ on:
   push:
     branches: ["main"]
 
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options:
+          - dev
+          - tst
+          - stg/prd
+        # set default environment where to deploy
+        default: dev
+        description: Environment
+        required: true
+      IS_DEVELOPMENT_RELEASE:
+        description: Append "develop-" prefix
+        type: boolean
+        default: false
+      RUN_DEPLOY:
+        description: Deploy containers (only to dev)
+        type: boolean
+        default: false
+        
+   workflow_call:
+     inputs:
+       environment:
+         type: string
+         default: dev
+         description: Environment to deploy to dev/tst
+         required: true
+       IS_DEVELOPMENT_RELEASE:
+         type: boolean
+         default: true
+       RUN_DEPLOY:
+         type: boolean
+         default: true
+
 jobs:
   debug_info:
     permissions:
