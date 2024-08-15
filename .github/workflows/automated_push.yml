@@ -4,3 +4,15 @@ name: Automated deploy on push
 on:
   push:
     branches: ["main"]
+
+jobs:
+  debug_info:
+    permissions:
+      # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: DEBUG - Output parameters
+        shell: bash
+        run: echo "${{ format('<h1>Parameters</h1><p>{0}</p>', tojson(inputs)) }}" > "$GITHUB_STEP_SUMMARY"
