@@ -39,7 +39,7 @@ jobs:
         run: echo "${{ format('<h1>Parameters</h1><p>{0}</p>', tojson(inputs)) }}" > "$GITHUB_STEP_SUMMARY"
       
       - name: debug
-        run: ${{ !contains(inputs.IS_DEVELOPMENT_RELEASE, 'true') }}
+        run: ${{ !(inputs.IS_DEVELOPMENT_RELEASE) }}
   
       - name: Dump GitHub context
         env:
